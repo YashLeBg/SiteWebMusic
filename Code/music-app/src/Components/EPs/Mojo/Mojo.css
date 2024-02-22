@@ -1,0 +1,30 @@
+
+.box-border {
+    border: 4px solid #ccc;
+    overflow: hidden;
+}
+
+.box-border img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.song-container {
+    margin: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.song-container:hover {
+    transform: scale(1.05);
+    /* Effet de zoom au survol */
+}
+
+.songs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
