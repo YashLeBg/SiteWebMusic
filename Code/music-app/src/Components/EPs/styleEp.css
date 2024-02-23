@@ -1,9 +1,3 @@
-.page-ocho {
-    display: grid;
-    grid-template-rows: 1fr 20%;
-    height: 100vh;
-}
-
 body {
     background-color: black;
 }

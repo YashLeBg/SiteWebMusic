@@ -18,7 +18,6 @@ const isLoggedIn = () => {
 
 function App() {
   return (
-    <div className="relative flex">
       <Router>
         <div className="App">
           <Switch>
@@ -43,7 +42,6 @@ function App() {
           </Switch>
         </div>
       </Router>
-    </div>
   );
 }
 

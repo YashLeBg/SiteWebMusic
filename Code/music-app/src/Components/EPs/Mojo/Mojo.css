@@ -28,3 +28,10 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+.btn-back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+}

@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import "./Connexion.css";
 
 function Connexion() {
@@ -17,7 +16,7 @@ function Connexion() {
   };
 
   return (
-    <Fragment>
+    <>
       <div className="wrapper">
         <form onSubmit={handleSubmit}>
           <div className="input-box">
@@ -29,7 +28,7 @@ function Connexion() {
           </button>
         </form>
       </div>
-    </Fragment>
+    </>
   );
 }
 
