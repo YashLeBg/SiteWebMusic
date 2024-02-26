@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import albumImg from "./../../../assets/img/blackNWhiteAlbum.jpeg";
 import { IoPlayOutline, IoPauseOutline } from "react-icons/io5";
-import { RxTrackNext, RxTrackPrevious } from "react-icons/rx";
 import { RxReload } from "react-icons/rx";
 import { BiArrowBack } from "react-icons/bi";
 
@@ -27,11 +26,11 @@ const Mojo: React.FC = () => {
           }
           audioRef.current.play();
           setIsPlaying(true);
+          prevAudio = audioRef.current;
         } else {
           audioRef.current.pause();
           setIsPlaying(false);
         }
-        prevAudio = audioRef.current;
       }
     };
 
@@ -50,7 +49,7 @@ const Mojo: React.FC = () => {
         setIsPlaying(false);
       };
 
-      audioElement?.addEventListener("ended", handlePlaying);
+      audioElement?.addEventListener("ended", handleEnded);
       audioElement?.addEventListener("playing", handlePlaying);
       audioElement?.addEventListener("pause", handlePause);
 
@@ -104,16 +103,28 @@ const Mojo: React.FC = () => {
 
   let prevAudio: HTMLAudioElement | null = null;
 
-  const MusicPlayer: React.FC<{
-    onNext: () => void;
-    onPrevious: () => void;
-  }> = ({ onNext, onPrevious }) => {
+  const MusicPlayer: React.FC = () => {
     const [currentTime, setCurrentTime] = useState(0);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const duree = prevAudio?.duration || 0;
 
     const handleReplay = () => {
       if (prevAudio) {
         prevAudio.currentTime = 0;
         prevAudio.play();
+        setIsPlaying(true);
+      }
+    };
+
+    const handlePlaying = () => {
+      if (prevAudio) {
+        if (prevAudio.paused) {
+          prevAudio.play();
+          setIsPlaying(true);
+        } else {
+          prevAudio.pause();
+          setIsPlaying(false);
+        }
       }
     };
 
@@ -125,24 +136,44 @@ const Mojo: React.FC = () => {
       return () => clearInterval(interval);
     }, []);
 
+    useEffect(() => {
+      const audioElement = prevAudio;
+
+      const handleEnded = () => {
+        setIsPlaying(false);
+      };
+
+      const handlePlaying = () => {
+        setIsPlaying(true);
+      };
+
+      const handlePause = () => {
+        setIsPlaying(false);
+      };
+
+      audioElement?.addEventListener("ended", handleEnded);
+      audioElement?.addEventListener("playing", handlePlaying);
+      audioElement?.addEventListener("pause", handlePause);
+
+      return () => {
+        audioElement?.removeEventListener("ended", handleEnded);
+        audioElement?.removeEventListener("playing", handlePlaying);
+        audioElement?.removeEventListener("pause", handlePause);
+      };
+    }, []);
+
     return (
       <div className="music-player fixed bottom-0 left-0 right-0 bg-black p-4">
         <div className="flex justify-between">
-          <div className="flex justify-start items-center">
+          <div className="justify-start text-white" onClick={handlePlaying}>
             <button
+              type="button"
               className="text-black bg-white-700 hover:bg-gray-400  font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-white"
-              onClick={onPrevious}
             >
-              <RxTrackPrevious />
-            </button>
-            <button
-              className="text-black bg-white-700 hover:bg-gray-400  font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-white"
-              onClick={onNext}
-            >
-              <RxTrackNext />
+              {isPlaying ? <IoPauseOutline /> : <IoPlayOutline />}
             </button>
           </div>
-          <div className="flex flex-row justify-center items-center mt-2">
+          <div className="text-white flex flex-row justify-center items-center mt-2">
             <input
               type="range"
               min="0"
@@ -151,8 +182,11 @@ const Mojo: React.FC = () => {
               onChange={(e) => {
                 if (prevAudio) prevAudio.currentTime = Number(e.target.value);
               }}
-            />
-            <span>{formatTime(currentTime)}</span>
+            />{" "}
+            &nbsp;
+            <span>
+              {formatTime(currentTime)} / {formatTime(duree)}
+            </span>
           </div>
           <div className="justify-end text-white" onClick={handleReplay}>
             <button
@@ -164,20 +198,6 @@ const Mojo: React.FC = () => {
           </div>
         </div>
       </div>
-    );
-  };
-
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
-
-  const handleNext = () => {
-    setCurrentSongIndex((prevIndex) =>
-      prevIndex === songsData.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrevious = () => {
-    setCurrentSongIndex((prevIndex) =>
-      prevIndex === 0 ? songsData.length - 1 : prevIndex - 1
     );
   };
 
@@ -195,7 +215,7 @@ const Mojo: React.FC = () => {
           <Song key={index} title={song.title} audioUrl={song.audioUrl} />
         ))}
       </div>
-      <MusicPlayer onNext={handleNext} onPrevious={handlePrevious} />
+      <MusicPlayer />
     </>
   );
 };
