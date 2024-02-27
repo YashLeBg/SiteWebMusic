@@ -11,6 +11,7 @@ import Accueil from "./Components/Accueil/Accueil";
 import Ocho from "./Components/EPs/Ocho/Ocho";
 import Mojo from "./Components/EPs/Mojo/Mojo";
 import So from "./Components/EPs/So/So";
+import Header from "./Components/Header/Header";
 
 const isLoggedIn = () => {
   return localStorage.getItem("isLoggedIn") === "true";

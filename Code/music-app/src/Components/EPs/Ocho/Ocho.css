@@ -1,0 +1,11 @@
+html {
+    background-color: blueviolet;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: darkorange;
+    justify-content: center;
+    align-items: center;
+} 

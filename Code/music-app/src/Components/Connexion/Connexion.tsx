@@ -1,16 +1,20 @@
 import "./Connexion.css";
+import CryptoJS from "crypto-js";
 
 function Connexion() {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const code = e.target.code.value;
 
-    if (code === "1234") {
+    // Hachage du mot de passe entré par l'utilisateur
+    const hashedCode = CryptoJS.SHA256(code).toString();
+
+    if (hashedCode === "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4") {
       console.log("code correct");
       localStorage.setItem("isLoggedIn", "true");
       window.location.href = "/launch";
     } else {
-      console.log("code incorrect");
+      console.log(CryptoJS.SHA256(code).toString());
       alert("Code incorrect");
     }
   };

@@ -203,7 +203,7 @@ const Mojo: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mb-2">
         <Link className="btn-back" to="/accueil">
           <button className="text-xl hover:text-2xl scale-100 hover:scale-175 ease-in duration-100">
             <BiArrowBack />
