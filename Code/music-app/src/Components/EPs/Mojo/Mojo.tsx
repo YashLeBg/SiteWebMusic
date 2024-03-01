@@ -173,12 +173,13 @@ const Mojo: React.FC = () => {
               {isPlaying ? <IoPauseOutline /> : <IoPlayOutline />}
             </button>
           </div>
-          <div className="text-white flex flex-row justify-center items-center mt-2">
+          <div className="text-white flex flex-row justify-center items-center mt-2 ">
             <input
               type="range"
               min="0"
               max={prevAudio?.duration || 0}
               value={currentTime}
+              className="slider"
               onChange={(e) => {
                 if (prevAudio) prevAudio.currentTime = Number(e.target.value);
               }}
@@ -202,7 +203,7 @@ const Mojo: React.FC = () => {
   };
 
   return (
-    <>
+    <div className="pageMojo">
       <div className="flex flex-col items-center mb-2">
         <Link className="btn-back" to="/accueil">
           <button className="text-xl hover:text-2xl scale-100 hover:scale-175 ease-in duration-100">
@@ -210,13 +211,15 @@ const Mojo: React.FC = () => {
           </button>
         </Link>
       </div>
-      <div className="songs-container flex flex-wrap pb-20 pt-5">
+      <div className="songs-container flex flex-wrap pb-25 pt-5">
         {songsData.map((song, index) => (
           <Song key={index} title={song.title} audioUrl={song.audioUrl} />
         ))}
       </div>
-      <MusicPlayer />
-    </>
+      <div>
+        <MusicPlayer />
+      </div>
+    </div>
   );
 };
 
