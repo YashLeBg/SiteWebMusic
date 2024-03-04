@@ -1,34 +1,28 @@
-import trackOne from './songs/son1.mp3';
-import trackTwo from './songs/son2.mp3';
-import trackThree from './songs/son3.mp3';
-import coverArtOne from './../../../../assets/img/blackNWhiteAlbum.jpeg';
-import coverArtTwo from './../../../../assets/img/neonAlbum.jpeg';
-import coverArtThree from './../../../../assets/img/album.jpg';
 import { Playlist } from '../audioplayer/types';
 
 const playlist: Playlist = [
   {
-    audioSrc: trackOne,
+    audioSrc: 'src/assets/songs/son1.mp3',
     metadata: {
       title: 'Son 1',
       artist: 'So',
-      coverArtSrc: coverArtOne,
+      coverArtSrc: 'src/assets/img/blackNWhiteAlbum.jpeg',
     },
   },
   {
-    audioSrc: trackTwo,
+    audioSrc: 'src/assets/songs/son2.mp3',
     metadata: {
       title: 'Son 2',
       artist: 'So',
-      coverArtSrc: coverArtTwo,
+      coverArtSrc: 'src/assets/img/neonAlbum.jpeg',
     },
   },
   {
-    audioSrc: trackThree,
+    audioSrc: 'src/assets/songs/son6.mp3',
     metadata: {
       title: 'Son 3',
       artist: 'So',
-      coverArtSrc: coverArtThree,
+      coverArtSrc: 'src/assets/img/album.jpg',
     },
   },
 ];

@@ -1,12 +1,3 @@
-import playButtonIcon from '../assets/icons/ic_play.svg';
-import pauseButtonIcon from '../assets/icons/ic_pause.svg';
-import nextButtonIcon from '../assets/icons/ic_next.svg';
-import prevButtonIcon from '../assets/icons/ic_prev.svg';
-import shuffleButtonIcon from '../assets/icons/ic_shuffle.svg';
-import shuffleButtonDisabledIcon from '../assets/icons/ic_shuffle_disabled.svg';
-import repeatButtonIcon from '../assets/icons/ic_repeat.svg';
-import repeatButtonDisabledIcon from '../assets/icons/ic_repeat_disabled.svg';
-
 type ControlsProps = {
   onPlayClick: () => void;
   onPrevClick: () => void;
@@ -31,18 +22,18 @@ const Controls = ({
   return (
     <div className="flex flex-row mt-4">
       <ImageButton
-        src={shuffle ? shuffleButtonIcon : shuffleButtonDisabledIcon}
+        src={shuffle ? 'src/Components/EPs/So/assets/icons/ic_shuffle.svg' : 'src/Components/EPs/So/assets/icons/ic_shuffle_disabled.svg'}
         onClick={onShuffleClick}
       />
-      <ImageButton src={prevButtonIcon} onClick={onPrevClick} />
+      <ImageButton src={'src/Components/EPs/So/assets/icons/ic_prev.svg'} onClick={onPrevClick} />
       <ImageButton
         className="mr-2 ml-2"
-        src={isPlaying ? pauseButtonIcon : playButtonIcon}
+        src={isPlaying ? 'src/Components/EPs/So/assets/icons/ic_pause.svg' : 'src/Components/EPs/So/assets/icons/ic_play.svg'}
         onClick={onPlayClick}
       />
-      <ImageButton src={nextButtonIcon} onClick={onNextClick} />
+      <ImageButton src={'src/Components/EPs/So/assets/icons/ic_next.svg'} onClick={onNextClick} />
       <ImageButton
-        src={repeat ? repeatButtonIcon : repeatButtonDisabledIcon}
+        src={repeat ? 'src/Components/EPs/So/assets/icons/ic_repeat.svg' : 'src/Components/EPs/So/assets/icons/ic_repeat_disabled.svg'}
         onClick={onRepeatClick}
       />
     </div>

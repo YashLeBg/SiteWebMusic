@@ -1,7 +1,3 @@
-import album1 from "./../../../../assets/img/blackNWhiteAlbum.jpeg";
-import album2 from "./../../../../assets/img/neonAlbum.jpeg";
-import album3 from "./../../../../assets/img/album.jpg";
-
 type SongInfoProps = {
   title?: string;
   artist?: string;
@@ -12,28 +8,28 @@ const SongInfo = ({ title, artist, coverArtSrc }: SongInfoProps) => {
   return (
     <div className="flex flex-col justify-center items-center mb-10">
       <div className="flex mb-5">
-        {coverArtSrc !== album1 && (
+        {coverArtSrc !== "src/assets/img/blackNWhiteAlbum.jpeg" && (
           <img
             className="drop-shadow-lg rounded-sm m-1"
             width={40}
             height={40}
-            src={album1}
+            src={"src/assets/img/blackNWhiteAlbum.jpeg"}
           />
         )}
-        {coverArtSrc !== album2 && (
+        {coverArtSrc !== "src/assets/img/neonAlbum.jpeg" && (
           <img
             className="drop-shadow-lg rounded-sm m-1"
             width={40}
             height={40}
-            src={album2}
+            src={"src/assets/img/neonAlbum.jpeg"}
           />
         )}
-        {coverArtSrc !== album3 && (
+        {coverArtSrc !== "src/assets/img/album.jpg" && (
           <img
             className="drop-shadow-lg rounded-sm m-1"
             width={40}
             height={40}
-            src={album3}
+            src={"src/assets/img/album.jpg"}
           />
         )}
       </div>

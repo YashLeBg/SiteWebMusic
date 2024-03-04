@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import albumImg from "./../../../assets/img/blackNWhiteAlbum.jpeg";
 import { IoPlayOutline, IoPauseOutline } from "react-icons/io5";
 import { RxReload } from "react-icons/rx";
 import { BiArrowBack } from "react-icons/bi";
@@ -70,7 +69,7 @@ const Mojo: React.FC = () => {
           onClick={handleTogglePlay}
         >
           <img
-            src={albumImg}
+            src="src/assets/img/blackNWhiteAlbum.jpeg"
             alt={title}
             className="w-full h-full object-cover"
           />

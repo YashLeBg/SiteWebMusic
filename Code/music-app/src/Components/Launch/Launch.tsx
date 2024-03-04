@@ -1,7 +1,6 @@
 import ReactPlayer from "react-player";
 import "./Launch.css";
 import "../../App.css";
-import video from "../../assets/videos/clip.mp4";
 import { Link, useHistory } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -12,7 +11,7 @@ function Launch() {
     <div className="player-wrapper">
       <ReactPlayer
         className="react-player"
-        url={video}
+        url="src/assets/videos/clip.mp4"
         playing
         controls
         width="100%"
