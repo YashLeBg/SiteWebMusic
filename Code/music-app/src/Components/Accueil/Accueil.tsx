@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Accueil() {
   return (
-    <div>
+    <div className="pageAccueil">
       <ul className="planetes">
         <li><Link to="/ocho"><IoMdPlanet /></Link></li>
         <li><Link to="/mojo"><IoMdPlanet /></Link></li>
