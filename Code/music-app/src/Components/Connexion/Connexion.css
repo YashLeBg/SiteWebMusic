@@ -10,7 +10,9 @@ body {
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+    background-color: grey;
 }
+
 
 /* CSS POUR LE FORM */
 

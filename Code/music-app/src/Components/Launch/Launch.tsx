@@ -14,6 +14,7 @@ function Launch() {
         className="react-player"
         url={video}
         playing
+        controls
         width="100%"
         height="100%"
         onEnded={() => {

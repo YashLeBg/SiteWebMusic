@@ -20,7 +20,7 @@ function Connexion() {
   };
 
   return (
-    <>
+    <div className="pageConnexion">
       <div className="wrapper">
         <form onSubmit={handleSubmit}>
           <div className="input-box">
@@ -32,7 +32,7 @@ function Connexion() {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

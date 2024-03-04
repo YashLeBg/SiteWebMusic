@@ -62,7 +62,7 @@ const Mojo: React.FC = () => {
 
     return (
       <div>
-        <h3 className="text-black rounded bg-gray-300 text-center mt-2">
+        <h3 className="text-black text-center mt-2">
           {title}
         </h3>
         <div
