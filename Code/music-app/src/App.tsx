@@ -22,7 +22,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/connexion">
+          <Route exact path="/">
             <Connexion />
           </Route>
           <Route path="/launch">
