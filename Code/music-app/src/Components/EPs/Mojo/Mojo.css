@@ -4,7 +4,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: grey;
+    background-image: url("src/assets/img/background/bAndW.avif");
+
 }
 
 .box-border {
@@ -26,20 +27,39 @@
     transition: transform 0.3s ease;
 }
 
+
 .song-container:hover {
     transform: scale(1.05);
-    /* Effet de zoom au survol */
 }
 
 .songs-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    max-height: calc(100vh - 100px);
+    /* Hauteur maximale égale à la hauteur de la fenêtre moins une marge */
+    overflow-y: auto;
+    /* Activer le défilement vertical si nécessaire */
 }
+
 
 .btn-back {
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 1%;
+    z-index: 100;
+}
+
+.btn-next {
+    position: absolute;
+    top: 10px;
+    right: 1%;
+    z-index: 100;
+}
+
+.btn-prev {
+    position: absolute;
+    top: 10px;
+    right: 3%;
     z-index: 100;
 }

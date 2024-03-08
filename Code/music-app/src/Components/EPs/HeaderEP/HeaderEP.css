@@ -1,0 +1,48 @@
+.epTitle {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slide-up-text {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.slide-up-text.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-up-fast-text {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s, transform 0.2s;
+}
+
+.slide-up-fast-text.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-left-ep-title {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.slide-left-ep-title.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-text {
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.fade-text.show {
+    opacity: 1;
+}

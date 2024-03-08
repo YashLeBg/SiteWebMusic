@@ -25,8 +25,8 @@ const ProgressBar = ({
         }}
       />
       <div className="flex w-full flex-row justify-between mt-1 text-primary">
-        <span className="text-xs">{leftLabel}</span>
-        <span className="text-xs">{rightLabel}</span>
+        <span className="text-white text-xs">{leftLabel}</span>
+        <span className="text-white text-xs">{rightLabel}</span>
       </div>
     </div>
   );

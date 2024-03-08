@@ -1,27 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-} 
-
-body {
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: grey;
-}
-
-
-/* CSS POUR LE FORM */
-
 .wrapper {
     width: 420px;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
+    /* border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2); */
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;

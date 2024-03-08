@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoPlayOutline, IoPauseOutline } from "react-icons/io5";
 import { RxReload } from "react-icons/rx";
-import { BiArrowBack } from "react-icons/bi";
+import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
+import { AiOutlineRollback } from "react-icons/ai";
 
 import "./Mojo.css";
 import { Link } from "react-router-dom";
@@ -61,9 +62,7 @@ const Mojo: React.FC = () => {
 
     return (
       <div>
-        <h3 className="text-black text-center mt-2">
-          {title}
-        </h3>
+        <h3 className="text-white text-center mt-2">{title}</h3>
         <div
           className="song-container rounded box-border h-64 w-64 border-4"
           onClick={handleTogglePlay}
@@ -91,13 +90,13 @@ const Mojo: React.FC = () => {
   };
 
   const songsData: SongProps[] = [
-    { title: "Song 1", audioUrl: "src/assets/songs/son1.mp3" },
-    { title: "Song 2", audioUrl: "src/assets/songs/son2.mp3" },
-    { title: "Song 3", audioUrl: "src/assets/songs/son3.mp3" },
-    { title: "Song 4", audioUrl: "src/assets/songs/son4.mp3" },
-    { title: "Song 5", audioUrl: "src/assets/songs/son5.mp3" },
-    { title: "Song 6", audioUrl: "src/assets/songs/son6.mp3" },
-    { title: "Song 7", audioUrl: "src/assets/songs/son6.mp3" },
+    { title: "Song 1", audioUrl: "src/assets/songs/songs-mojo/son1.mp3" },
+    { title: "Song 2", audioUrl: "src/assets/songs/songs-mojo/son2.mp3" },
+    { title: "Song 3", audioUrl: "src/assets/songs/songs-mojo/son3.mp3" },
+    { title: "Song 4", audioUrl: "src/assets/songs/songs-mojo/son4.mp3" },
+    { title: "Song 5", audioUrl: "src/assets/songs/songs-mojo/son5.mp3" },
+    { title: "Song 6", audioUrl: "src/assets/songs/songs-mojo/son6.mp3" },
+    { title: "Song 7", audioUrl: "src/assets/songs/songs-mojo/son6.mp3" },
   ];
 
   let prevAudio: HTMLAudioElement | null = null;
@@ -201,18 +200,47 @@ const Mojo: React.FC = () => {
     );
   };
 
+  const [showAll, setShowAll] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowAll(true);
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="pageMojo">
       <div className="flex flex-col items-center mb-2">
         <Link className="btn-back" to="/accueil">
-          <button className="text-xl hover:text-2xl scale-100 hover:scale-175 ease-in duration-100">
-            <BiArrowBack />
+          <button className="text-white text-xl hover:text-2xl scale-100 hover:scale-175 ease-in duration-100">
+            <AiOutlineRollback />
+          </button>
+        </Link>
+        <Link className="btn-prev" to="/ocho">
+          <button className="text-white text-xl hover:text-2xl scale-100 hover:scale-175 ease-in duration-100">
+            <GrLinkPrevious />
+          </button>
+        </Link>
+        <Link className="btn-next" to="/so">
+          <button className="text-white text-xl hover:text-2xl scale-100 hover:scale-175 ease-in duration-100">
+            <GrLinkNext />
           </button>
         </Link>
       </div>
-      <div className="songs-container flex flex-wrap pb-25 pt-5">
+
+      <div className="flex flex-row mb-2"></div>
+
+      <div
+        className={`songs-container pb-25 pt-2 text-white slide-up-text ${
+          showAll ? "show" : ""
+        }`}
+      >
         {songsData.map((song, index) => (
-          <Song key={index} title={song.title} audioUrl={song.audioUrl} />
+          <div key={index}>
+            <Song title={song.title} audioUrl={song.audioUrl} />
+          </div>
         ))}
       </div>
       <div>

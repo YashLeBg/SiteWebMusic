@@ -1,0 +1,64 @@
+.pageAccueil {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("src/assets/img/background/accueil.jpeg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planete-ocho {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.planete-ocho:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.planete-mojo {
+    position: absolute;
+    top: 50px;
+    left: 740px;
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.planete-mojo:hover {
+    transform: scale(1.2);
+}
+
+.planete-so {
+    position: absolute;
+    top: 50px;
+    left: 900px;
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.planete-so:hover {
+    transform: scale(1.2);
+}
+
+@media only screen and (max-width: 900px) {
+    .planete-ocho {
+        top: 50px;
+        left: 50px;
+    }
+
+    .planete-mojo {
+        top: 45px;
+        left: 120px;
+    }
+}

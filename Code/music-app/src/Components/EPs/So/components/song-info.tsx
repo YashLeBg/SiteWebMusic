@@ -39,8 +39,8 @@ const SongInfo = ({ title, artist, coverArtSrc }: SongInfoProps) => {
         height={180}
         src={coverArtSrc}
       />
-      <span className="text-2xl drop-shadow-lg text-primary">{title}</span>
-      <span className="text-base drop-shadow-lg text-primary">{artist}</span>
+      <span className="text-white text-2xl drop-shadow-lg text-primary">{title}</span>
+      <span className="text-white text-base drop-shadow-lg text-primary">{artist}</span>
     </div>
   );
 };
