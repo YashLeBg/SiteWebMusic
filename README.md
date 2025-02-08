@@ -2,7 +2,7 @@
 
 ### Développeur
 
-- Anli-Yach MOHAMED
+- [Anli-Yach Mohamed](https://github.com/YashLeBg)
 
 ## Description
 Ce projet est un site web conçu pour promouvoir un EP musical. Il permet aux auditeurs d'écouter les morceaux de l'artiste et de visionner un clip d'introduction. L'accès au site est restreint par un code, qui peut être modifié par l'administrateur.
