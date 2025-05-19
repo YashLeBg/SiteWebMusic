@@ -1,13 +1,13 @@
 # 🎵 Site de Promotion d'un EP
 
-### Développeur
+### 👨‍💻 Développeur
 
 - [Anli-Yach Mohamed](https://github.com/YashLeBg)
 
-## Description
+## 📌 Description
 Ce projet est un site web conçu pour promouvoir un EP musical. Il permet aux auditeurs d'écouter les morceaux de l'artiste et de visionner un clip d'introduction. L'accès au site est restreint par un code, qui peut être modifié par l'administrateur.
 
-## 📌 Fonctionnalités
+## ⚙️ Fonctionnalités
 - Page de connexion avec un code d'accès.
 - Lecture du clip d'intro avant d'accéder au contenu.
 - Présentation des EPs de l'artiste avec écoute en streaming.
@@ -60,5 +60,5 @@ Ce projet est un site web conçu pour promouvoir un EP musical. Il permet aux au
 - Ajout d'un système d'authentification plus sécurisé.
 - Optimisation des performances pour une meilleure expérience utilisateur.
 
-## 👨‍💻 Auteur
+## 📝 Licence
 Projet réalisé dans le cadre d'un stage de développement web.
